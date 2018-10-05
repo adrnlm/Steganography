@@ -55,19 +55,17 @@ def print_all_pixel(image):
     rgb_image = image.convert('RGB')
 
     while column < height:
-        print('Column: ' + str(column))
         while row < width:
-            #Slow
-            #rgb_value = "Pixel (R,G,B) -> " + str(get_pixel(img, row, column))
-
-            #Faster ( Neater )
-            #rgb_value += "Pixel (R,G,B) -> " + str(rgb_image.getpixel((row-1, column-1)))
+            #Slow ( Neater )
+            #rgb_value += "Pixel (R,G,B) -> " + str(rgb_image.getpixel((row, column)))
             #print('Row number    -> ' + str(row))
             #print('Column number -> ' + str(column))
             #print('Coordinates   -> [' + str(row) + ',' + str(column) + ']')
             #print(rgb_value)
+            #rgb_value = ''
+            #print('')
 
-            #Fastest (Messy)
+            #Fast (Messy)
             rgb_value += " | Pixel [" + str(row) + "," + str(column) + "] -> " + str(rgb_image.getpixel((row, column)))
             row += 1
         print(rgb_value)
@@ -99,6 +97,7 @@ def mona_lisa_steganography(secret_message):
     #Encoding message to picture
     print('Encoding student ID. . .')
     img = Image.open('mona_lisa.jpg')
+    #print(get_pixel(img, 10, 50))
     number_to_hide = str(secret_message)
     secret_array = list(number_to_hide)
     try:
@@ -124,6 +123,7 @@ def mona_lisa_steganography(secret_message):
     #Decoding message to picture
     print('Decoding student ID. . .')
     encoded_picture = Image.open('Encoded_mona_lisa.png')
+    #print(get_pixel(encoded_picture, 10, 50))
     message_list = []
     count4 = 0
     count5 = 10
@@ -139,3 +139,6 @@ def mona_lisa_steganography(secret_message):
 # = = = = = = = = = = = = = = = = = =
 
 mona_lisa_steganography(user_input())
+
+#img = Image.open('mona_lisa.jpg')
+#print_all_pixel(img)
