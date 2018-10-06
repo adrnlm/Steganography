@@ -138,7 +138,7 @@ def mona_lisa_steganography(secret_message):
 
 # = = = = = = = = = = = = = = = = = =
 
-mona_lisa_steganography(user_input())
-
 #img = Image.open('mona_lisa.jpg')
 #print_all_pixel(img)
+
+mona_lisa_steganography(user_input())
