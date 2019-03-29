@@ -62,7 +62,7 @@ def print_all_pixel(image):
             #print('Column number -> ' + str(column))
             #print('Coordinates   -> [' + str(row) + ',' + str(column) + ']')
             #print(rgb_value)
-            #rgb_value = ''
+            rgb_value = ''
             #print('')
 
             #Fast (Messy)
